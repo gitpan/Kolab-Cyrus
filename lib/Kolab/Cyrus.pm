@@ -44,10 +44,10 @@ our %EXPORT_TAGS = (
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
 our @EXPORT = qw(
-    
+
 );
 
-our $VERSION = '0.9';
+our $VERSION = sprintf('%d.%02d', q$Revision: 1.1.1.1 $ =~ /(\d+)\.(\d+)/);
 
 sub create
 {
@@ -59,7 +59,7 @@ sub create
         Kolab::log('Y', 'Unable to connect to local Cyrus admin interface', KOLAB_ERROR);
         exit(1);
     }
-                                                                                                                                  
+
     if (!$cyrus->authenticate(
         'User'          => $Kolab::config{'cyrus_admin'},
         'Password'      => $Kolab::config{'cyrus_admin_pw'},
